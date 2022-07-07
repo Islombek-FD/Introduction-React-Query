@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
+import Home from './components/Home';
 import Users from './components/Users';
 import User from './components/User';
 
@@ -12,7 +13,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="app">
         <Routes>
-          <Route path='/' element={<h1>Home page</h1>} />
+          <Route path='/' element={<Home />} />
 
           <Route path='/users' element={<Users />} />
 

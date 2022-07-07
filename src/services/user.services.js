@@ -5,7 +5,14 @@ export const UserServices = {
       return fetch(BASE_URL + 'users').then(res => res.json());
    },
 
-   async getUserById(id) {
+   async getById(id) {
       return fetch(BASE_URL + `users/${id}`).then(res => res.json());
+   },
+
+   async create(data) {
+      return fetch(BASE_URL + '', {
+         method: "POST",
+         body: JSON.stringify(data)
+      }).then(res => res.json());
    }
 }

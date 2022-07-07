@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { UserServices } from '../services/user.services';
 
 export const useUser = (id) => {
-   const { isLoading, data: user } = useQuery('User by id', () => UserServices.getUserById(id), {
+   const { isLoading, data: user } = useQuery('User by id', () => UserServices.getById(id), {
       onError: (error) => {
          console.log(error);
       },
