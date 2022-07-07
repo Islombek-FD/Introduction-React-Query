@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-import { UsersServices } from '../../services/users.services';
+import React from 'react';
+import { useUsers } from '../../hooks/useUsers';
 
 function Users() {
-   const [users, setUsers] = useState([]);
-   const { isLoading } = useQuery('Users', () => UsersServices.getAll(), {
-      onSuccess: (data) => {
-         setUsers(data);
-      },
-      onError: (error) => {
-         console.log(error.message);
-      },
-      select: (data) => data.map(user => ({
-         ...user,
-         name: user.name + ' developer'
-      }))
-   });
+   const { isLoading, users } = useUsers();
 
    return (
       <div>
@@ -33,7 +20,9 @@ function Users() {
                ))}
             </ul>
          ) : (
-            <div></div>
+            <div>
+               <strong className='text-danger'>No users!</strong>
+            </div>
          )}
       </div>
    )
