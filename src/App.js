@@ -5,6 +5,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import Home from './components/Home';
 import Users from './components/Users';
 import User from './components/User';
+import Posts from './components/Posts';
+import Todos from './components/Todos';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,10 @@ function App() {
           <Route path='/users' element={<Users />} />
 
           <Route path='/user/:userId' element={<User />} />
+
+          <Route path='/posts' element={<Posts />} />
+
+          <Route path='/todos' element={<Todos />} />
         </Routes>
       </div>
 

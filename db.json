@@ -1,0 +1,8 @@
+{
+  "todos": [
+     { "id": 1, "job": "Developer", "isComplited": false },
+     { "id": 2, "job": "Teacher", "isComplited": true },
+     { "id": 3, "job": "Driver", "isComplited": false },
+     { "id": 4, "job": "Chef", "isComplited": false }
+  ]
+}
